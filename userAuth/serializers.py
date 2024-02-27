@@ -18,4 +18,4 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
             return attrs
         
         def create(self,validate_date):
-            return User.objects.create_user(**validate_date)
+            return User.objectss.create_user(**validate_date)
