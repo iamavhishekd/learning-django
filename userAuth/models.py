@@ -12,7 +12,6 @@ class UserManager(BaseUserManager):
         last_name,
         username,
         password=None,
-        password2=None,
         ):
         """
         Creates and saves a User with the given email, first_name,last_name,username and password.
@@ -36,7 +35,6 @@ class UserManager(BaseUserManager):
         last_name,
         username,
         password=None,
-        password2=None,
         ):
         """
         Creates and saves a superuser with the given email, first_name,last_name,username and password.
@@ -63,7 +61,7 @@ class User(AbstractBaseUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    objectss = UserManager()
+    object = UserManager()
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'email']

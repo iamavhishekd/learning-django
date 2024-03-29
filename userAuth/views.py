@@ -20,6 +20,6 @@ class UserRegistrationView(APIView):
     def post(self,request,format=None):
         serializer=UserRegistrationSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            serializer.save
+            serializer.save()
             return Response({'msg':'Registration Success'},status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
